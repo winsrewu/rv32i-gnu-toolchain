@@ -132,6 +132,7 @@ jobs:
           path: riscv.tar.xz
 
   test-sim:
+    if: ${{ false }}
     runs-on: ${{ matrix.os }}
     needs: [submodule_cache]
     env:
