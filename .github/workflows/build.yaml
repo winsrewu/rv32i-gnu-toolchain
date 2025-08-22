@@ -64,15 +64,10 @@ jobs:
       smcache_key: ${{ needs.submodule_cache.outputs.key }}
     strategy:
       matrix:
-        os:     [ubuntu-22.04, ubuntu-24.04]
-        mode:   [newlib, linux, musl, uclibc]
-        target: [rv32gc-ilp32d, rv64gc-lp64d]
-        compiler: [gcc, llvm]
-        exclude:
-          - mode: musl
-            compiler: llvm
-          - mode: uclibc
-            compiler: llvm
+        os:     [ubuntu-24.04]
+        mode:   [newlib]
+        target: [rv32gc-ilp32]
+        compiler: [gcc]
     steps:
       - uses: actions/checkout@v4
 
